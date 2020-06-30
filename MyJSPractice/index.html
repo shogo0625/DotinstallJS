@@ -5,17 +5,63 @@
   <meta charset="utf-8">
   <title>Javascript Practice</title>
   <style>
+    body {
+      /* divを横並びにしたいため親要素であるこちらに記入 */
+      display: flex;
+      /* 要素が増えてきたときに折り返し表示 */
+      flex-wrap: wrap;
+    }
+
     .box {
       width: 100px;
       height: 100px;
       background-color: skyblue;
       cursor: pointer;
+      /* アニメーションに掛ける時間 */
+      transition: 0.8s;
+      margin: 0 8px 8px 0;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    .win {
+      background-color: pink;
+      border-radius: 50%;
+      /* 回転する度数 */
+      transform: rotate(360deg);
+    }
+
+    .lose {
+      transform: scale(0.9);
     }
   </style>
 </head>
 
 <body>
-  <div class="box"></div>
+
+  <script>
+    'use strict';
+
+    const num = 5;
+    const winner = Math.floor(Math.random() * num); // 0 ~ 4の整数値（floorで整数指定）
+
+    for (let i = 0; i < num; i++) {
+      const div = document.createElement('div');
+      div.classList.add('box');
+
+      div.addEventListener('click', () => {
+        if (i === winner) {
+          div.textContent = 'Win!';
+          div.classList.add('win');
+        } else {
+          div.textContent = 'Lose!';
+          div.classList.add('lose');
+        }
+      });
+      // documentの後に指定した要素（body）に子要素として追加したい要素を引数として渡す
+      document.body.appendChild(div);
+    }
+  </script>
 </body>
 
 </html>
