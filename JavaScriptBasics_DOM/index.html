@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Basics</title>
+  <style>
+    .my-color {
+      color: red;
+      background-color: skyblue;
+    }
+
+    .my-border {
+      border-bottom: 4px solid orange;
+    }
+
+    #todo li {
+      cursor: pointer;
+    }
+
+    #todo li.done {
+      /* クリックしたら打ち消し線 */
+      text-decoration: line-through;/
+    }
+  </style>
+</head>
+
+<body>
+  <button>Run</button>
+  <!-- title属性はマウスホバーされたときに表示される / data- から始まるカスタムデータ属性 -->
+  <h1 id="target" class="my-border" title="見出しです！" data-translation="Dotinstall">ドットインストール</h1>
+  <p>こんにちは。こんにちは。こんにちは。</p>
+  <p>こんにちは。こんにちは。こんにちは。</p>
+  <p>こんにちは。こんにちは。こんにちは。</p>
+
+  <ul>
+    <li>item 0</li>
+    <li>item 1</li>
+  </ul>
+
+  <input type="text">
+  <button id="add">add</button>
+
+  <select>
+    <option value="red">赤</option>
+    <option value="blue">青</option>
+    <option value="yellow">黄</option>
+  </select>
+  <button id="select_add">add</button>
+
+  <input type="radio" name="color" value="red"> 赤
+  <input type="radio" name="color" value="blue"> 青
+  <input type="radio" name="color" value="yellow"> 黄
+  <button id="radio_add">add</button>
+
+  <input type="checkbox" value="red"> 赤
+  <input type="checkbox" value="blue"> 青
+  <input type="checkbox" value="yellow"> 黄
+  <button id="check_add">add</button>
+
+  <ul id="added_list">
+  </ul>
+
+  <button id="event">Event Exercise</button>
+
+  <textarea></textarea>
+
+  <form>
+    <input type="text">
+    <button>Post</button>
+  </form>
+
+  <!-- ul が e.currentTarget　li が e.target -->
+  <ul id="todo">
+    <li>Todo</li>
+    <li>Todo</li>
+    <li>Todo</li>
+  </ul>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
